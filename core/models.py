@@ -256,6 +256,12 @@ class Venue(models.Model):
 
     is_open = models.BooleanField(default=True)
 
+    seating_emoji = models.BooleanField(default=False, verbose_name="🪑")
+    seating_information = tinymce_models.HTMLField(null=True, blank=True)
+
+    piano_emoji = models.BooleanField(default=False, verbose_name="🎹")
+    piano_type = models.CharField(max_length=255, null=True, blank=True)
+
     capacity = models.CharField(
         max_length=255, null=True, blank=True, verbose_name="cap"
     )
